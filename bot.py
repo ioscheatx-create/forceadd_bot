@@ -1,7 +1,7 @@
 from aiogram import Bot, Dispatcher, types
 from aiogram.utils import executor
 
-TOKEN = "YOUR_BOT_TOKEN"
+TOKEN = "8763744450:AAGKbiwrRW33lUuJ4LliYVaFo9T3XbCZcV0"
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
 
@@ -12,13 +12,13 @@ user_progress = {}
 async def start_cmd(message: types.Message):
     keyboard = types.InlineKeyboardMarkup(row_width=2)
     keyboard.add(
-        types.InlineKeyboardButton("🔗 Group 1", callback_data="group1"),
-        types.InlineKeyboardButton("🔗 Group 2", callback_data="group2")
+        types.InlineKeyboardButton("https://t.me/+2H2XVfUvvhw5OWZh", callback_data="group1"),
+        types.InlineKeyboardButton("https://t.me/+wCnwHlS0XK0wZWIx", callback_data="group2")
     )
     keyboard.add(
         types.InlineKeyboardButton("🔒 Final Link (Locked)", callback_data="locked")
     )
-    await message.answer("👋 Welcome! Join both groups to unlock the final link.", reply_markup=keyboard)
+    await message.answer("👇🏼""JOIN NOW TO WATCH VIDEO", reply_markup=keyboard)
 
 @dp.callback_query_handler(lambda c: c.data in ["group1", "group2"])
 async def process_group_click(callback_query: types.CallbackQuery):
